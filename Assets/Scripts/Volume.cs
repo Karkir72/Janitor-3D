@@ -9,7 +9,7 @@ public class Volume : MonoBehaviour
     private void Start()
     {
         _slider = GetComponent<Slider>();
-        if (PlayerPrefs.HasKey("Volume"))
+        if (PlayerPrefs.HasKey(Preferences.Volume))
             _slider.value = PlayerPrefs.GetFloat("Volume");
     }
 

@@ -51,7 +51,7 @@ public class Finish : MonoBehaviour
             Instantiate(_gift, _tempTiles[0].transform.position, Quaternion.identity);
             _audioSource.PlayOneShot(_winSound);
             _winScreen.SetActive(true);
-            PlayerPrefs.SetInt("LastLevel", SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt(Preferences.LastLevel, SceneManager.GetActiveScene().buildIndex);
         }
 
         _tempTiles.Remove(tile);

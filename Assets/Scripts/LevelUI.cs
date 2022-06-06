@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-public class Interface : MonoBehaviour
+public class LevelUI : MonoBehaviour
 {
     [SerializeField] private GameObject _destroyableTiles;
     [SerializeField] private Slider _slider;

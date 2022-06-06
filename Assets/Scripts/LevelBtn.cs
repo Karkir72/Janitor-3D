@@ -33,7 +33,7 @@ public class LevelBtn : MonoBehaviour
         {
             return true;
         }
-        else if (PlayerPrefs.GetInt("LastLevel") + 1 >= _levelNum)
+        else if (PlayerPrefs.GetInt(Preferences.LastLevel) + 1 >= _levelNum)
         {
             return true;
         }

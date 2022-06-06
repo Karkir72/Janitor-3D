@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
+[RequireComponent(typeof(Camera))]
 public class MainMenuCamera : MonoBehaviour
 {
     [SerializeField] private GameObject _levelsObject;
@@ -47,17 +48,17 @@ public class MainMenuCamera : MonoBehaviour
     {
         Vector3 targetPosition = transform.position;
 
-        if (PlayerPrefs.HasKey("LastLevel") == false)
+        if (PlayerPrefs.HasKey(Preferences.LastLevel) == false)
         {
             targetPosition.y = _levels[0].transform.position.y;
         }
-        else if (PlayerPrefs.GetInt("LastLevel") < _levels.Length)
+        else if (PlayerPrefs.GetInt(Preferences.LastLevel) < _levels.Length)
         {
-            targetPosition.y = _levels[PlayerPrefs.GetInt("LastLevel")].transform.position.y;            
+            targetPosition.y = _levels[PlayerPrefs.GetInt(Preferences.LastLevel)].transform.position.y;            
         }
         else
         {
-            targetPosition.y = _levels[PlayerPrefs.GetInt("LastLevel") - 1].transform.position.y;
+            targetPosition.y = _levels[PlayerPrefs.GetInt(Preferences.LastLevel) - 1].transform.position.y;
         }
 
         transform.DOMove(targetPosition, _duration).SetEase(_animationCurve);

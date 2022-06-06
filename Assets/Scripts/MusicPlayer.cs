@@ -21,9 +21,9 @@ public class MusicPlayer : MonoBehaviour
         {
             instance = this;
 
-            if (PlayerPrefs.HasKey("Volume"))
+            if (PlayerPrefs.HasKey(Preferences.Volume))
             {
-                _audioSource.volume = PlayerPrefs.GetFloat("Volume");
+                _audioSource.volume = PlayerPrefs.GetFloat(Preferences.Volume);
             }
             else
             {
